@@ -5,8 +5,8 @@ import json
 URL = "https://leak-lookup.com/api/search"
 KEY = "f40da5b9297a2431c945d94d92ac7648"
 TYPE = "email_address"
-PATH = "info.json"
-PATH2 = "Breach.sqlite"
+FILEPATH = "info.json"
+DBPATH = "Breach.sqlite"
 PARAMETER = f"{input('საძიებო მეილი : ')}"
 QUERY = f'key={KEY}&type={TYPE}&query={PARAMETER}'
 
@@ -53,8 +53,8 @@ def save_info_database(path2, url, query=QUERY):
 
 def main():
     get_info(URL)
-    save_into_file(PATH, URL)
-    save_info_database(PATH2, URL)
+    save_into_file(FILEPATH, URL)
+    save_info_database(DBPATH, URL)
 
 
 main()
